@@ -22,7 +22,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #Extra packages
-pacman -S mesa vlc xorg xorg-server
+pacman -S mesa vlc xorg xorg-server base-devel git
 
 #enable service
 systemctl enable ufw
