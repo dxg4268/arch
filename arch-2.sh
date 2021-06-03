@@ -1,4 +1,5 @@
 #Time
+pacman -S ntp
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 timedatectl set-ntp true
 hwclock --systohc
@@ -11,7 +12,7 @@ echo "LANG=en_IN.UTF-8" > /etc/locale.conf
 #Hosts
 echo arch > /etc/hostname
 echo "127.0.0.1		localhost" >> /etc/hosts
-echo "::1		localhost" >> /etc/hosts
+echo "::1		      localhost" >> /etc/hosts
 echo "127.0.1.1		arch.localdomain	arch" >> /etc/hosts
 
 #Bootloader
@@ -21,7 +22,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #Extra packages
-pacman -S mesa
+pacman -S mesa vlc xorg xorg-server
 
 #enable service
 systemctl enable ufw
