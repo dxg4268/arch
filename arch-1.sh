@@ -10,9 +10,9 @@ mount /dev/sda3 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@home
 umount /mnt
-mount -o compress=zstd,subvol=@ /dev/sda3 /mnt
+mount -o noatime,compress=zstd,subvol=@ /dev/sda3 /mnt
 mkdir /mnt/home
-mount -o compress=zstd,subvol=@home /dev/sda3 /mnt/home
+mount -o noatime,compress=zstd,subvol=@home /dev/sda3 /mnt/home
 
 #Install Base System
 pacstrap /mnt base linux-zen linux-firmware sudo nano vi vim networkmanager ufw
