@@ -22,8 +22,10 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #Extra packages
-pacman -S mesa vlc xorg xorg-server base-devel git
+pacman -S vlc xorg base-devel git go gnome firefox
 
 #enable service
 systemctl enable ufw
 systemctl enable NetworkManager
+systemctl enable gdm
+
