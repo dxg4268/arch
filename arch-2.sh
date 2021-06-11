@@ -24,6 +24,16 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #Extra packages
 pacman -S vlc xorg base-devel git go gnome firefox
 
+#Chaotic AUR and imp AUR Packages
+pacman-key --recv-key 3056513887B78AEB
+pacman-key --lsign-key 3056513887B78AEB
+pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
+echo "[multilib]" >> /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+echo "[chaotic-aur]" >> /etc/pacman.conf
+echo "Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
+pacman -Sy pamac-aur archlinux-appstream-data libpamac-aur yay
+
 #enable service
 systemctl enable ufw
 systemctl enable NetworkManager
