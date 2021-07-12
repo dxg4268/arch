@@ -25,7 +25,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 pacman -S vlc xorg base-devel git go gnome firefox
 
 #Chaotic AUR and imp AUR Packages
-pacman-key --recv-key 3056513887B78AEB
+pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 pacman-key --lsign-key 3056513887B78AEB
 pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-'{keyring,mirrorlist}'.pkg.tar.zst'
 echo "[multilib]" >> /etc/pacman.conf
