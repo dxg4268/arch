@@ -23,7 +23,7 @@ echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #Extra packages
-pacman -S vlc xorg base-devel git go openbox picom sddm firefox obconf lxrandr lxinput ttf-liberation ttf-dejavu --noconfirm
+pacman -S vlc xorg base-devel git go openbox picom sddm firefox obconf lxrandr lxinput ttf-liberation ttf-dejavu terminator --noconfirm
 
 #Chaotic AUR and imp AUR Packages
 #pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
